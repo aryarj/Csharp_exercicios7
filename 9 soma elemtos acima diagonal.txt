@@ -1,0 +1,47 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		/* Console.Clear();*/
+		int[,] M=new int[5,5];
+		int soma=0;
+        int count=0;
+		
+		Random rn = new Random();
+		
+		Console.WriteLine("Declarando uma matriz de 5 x 5");
+		for(int i=0;i<M.GetLength(0);i++)
+		{
+			for(int j=0;j<M.GetLength(1);j++)
+			{
+				M[i,j]=rn.Next(10);
+				Console.WriteLine("M1 ["+i+","+j+"]= "+M[i,j]);
+			}
+			
+		}
+
+        Console.WriteLine("Somando os elementos situados acima da diagonal");
+        //Para somar os elementos acima da diagonal principal 
+		// a linha da matriz tem que ir aumentando de 0 até 3, por isso: M.GetLength(0)-i
+        for(int i=0;i<(M.GetLength(0)-1);i++)
+		{
+            count=count+1;
+            //a coluna da matriz irá de 1 a 4, e aumentando, por isso j=count 
+			for(int j=count;j<M.GetLength(1);j=j+1)
+			{
+				soma=soma+M[i,j];
+                Console.WriteLine("M["+i+","+j+"]= "+M[i,j]);
+				Console.WriteLine("soma= "+soma);
+                
+			}
+			
+		}
+		
+			
+		
+	}
+}
+
+

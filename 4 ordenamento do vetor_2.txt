@@ -1,0 +1,53 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Clear();
+		int[] v = new int[10]{4,7,10,12,0,0,0,0,0,0};
+		int n=10;
+		int aux=0;
+		int i=0;
+		string opcao="";
+		
+		v[4]=8;
+		Console.WriteLine("O valor da posição 4 do vetor é: "+v[4]);
+		
+		Console.WriteLine("o vetor original é");
+			
+			for( int count = 0; count < n; count++)
+			{
+				Console.WriteLine("v["+count+"] = "+v[count]);
+			}
+		
+		Console.WriteLine("Deseja rearranjar os valores em ordem crescente? digite 's' para sim e qualquer tecla para não");
+		opcao=Console.ReadLine();
+		if(opcao=="s")
+		{
+		
+				while(i<(n-1))
+					{
+						for( int count = 0; count < (n-1) & v[count]!=0 && v[count+1]!=0; count++)
+						{
+							if(v[count]>v[count+1])
+							{
+								aux=v[count+1];
+								v[count+1]=v[count];
+								v[count]=aux;
+							}
+						}
+						i++;
+					}
+		
+		Console.WriteLine("o vetor rearranjado em ordem crescente é");
+			
+			for( int count = 0; count < n; count++)
+			{
+				Console.WriteLine("v["+count+"] = "+v[count]);
+			}
+		}
+		else if(opcao!="s")
+		Console.WriteLine("Fim do programa");
+	}
+}

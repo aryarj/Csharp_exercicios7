@@ -1,0 +1,45 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		/* Console.Clear();*/
+		int[,] M=new int[5,5];
+		int soma=0;
+        int somamaior=0;
+		int pos=0;
+		
+		Random rn = new Random();
+		
+		Console.WriteLine("Declarando uma matriz de 5 x 5");
+		for(int i=0;i<M.GetLength(0);i++)
+		{
+			for(int j=0;j<M.GetLength(0);j++)
+			{
+				M[i,j]=rn.Next(10);
+				Console.WriteLine("M1 ["+i+","+j+"]= "+M[i,j]);
+			}
+			
+		}
+		Console.WriteLine("Somando as linhas e constatando a maior linha de maior soma");
+		for(int i=0;i<M.GetLength(0);i++)
+		{
+			for(int j=0;j<M.GetLength(1);j++)
+			{
+				soma=soma+M[i,j];
+				
+			}
+			Console.WriteLine("soma= "+soma+" na linha "+i);
+			if(i==0)
+				{somamaior=soma;}
+			if(i>=1 & somamaior<soma)
+			    {somamaior=soma;
+				pos=i;}
+			soma=0;
+		}
+		Console.WriteLine("A maior soma de elementos de linha é= "+somamaior+"; Na linha "+pos);
+		
+		
+	}
+}

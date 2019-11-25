@@ -1,0 +1,51 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		int[,] M1=new int[5,5];
+		int[,] M2=new int[5,5];
+		
+		Random rn = new Random();
+		int A = rn.Next();
+
+		Console.WriteLine("Início");
+		for(int i=0;i<M1.GetLength(0);i++)
+		{
+			for(int j=0;j<M1.GetLength(0);j++)
+			{
+				M1[i,j]=rn.Next(50);
+				Console.WriteLine("M1 ["+i+","+j+"]= "+M1[i,j]);
+			}
+			
+		}
+
+		for(int i=0;i<M2.GetLength(0);i++)
+		{
+				M2[1,i]=M1[1,i];
+		    	M2[3,i]=M1[3,i];
+		    	M1[1,i]=M2[3,i];
+				M1[3,i]=M2[1,i];
+		}
+		
+		Console.WriteLine("Após a troca da lina 1 pela 3 de M1:");
+        for(int i=0;i<M1.GetLength(0);i++)
+		{
+			for(int j=0;j<M1.GetLength(1);j++)
+			{
+				
+				Console.WriteLine("M1 ["+i+","+j+"]= "+M1[i,j]);
+			}
+			
+		}
+
+		Console.WriteLine("Fim");
+
+			
+		
+	}
+}
+
+

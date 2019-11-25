@@ -1,0 +1,51 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Clear();
+		Random rn = new Random();
+		int i = rn.Next();
+		i = rn.Next(20);
+		Console.WriteLine("i é: "+i);
+		int j=rn.Next();
+
+		int[] v = new int[i];
+		int nmenor=0;
+		int nmaior=0;
+		int pos_menor=0;
+		int pos_maior=0;
+
+		for( int count = 0; count < i; count++)
+			{
+				j= rn.Next(50);
+				v[count]=j;
+				Console.WriteLine("v["+count+"] é: "+v[count]);
+			}
+		
+		for( int count2 = 0; count2 < i; count2++)
+			{
+			if(count2==0)
+				{
+				nmenor = v[0];
+        		nmaior = v[0];
+				}
+			if(v[count2] < nmenor )
+				{
+					nmenor = v[count2];
+					pos_menor = count2;
+				}
+			else if( v[count2] > nmaior )
+				{
+					nmaior = v[count2];
+					pos_maior = count2;
+  				}
+
+			}
+		Console.WriteLine( "O menor elemento do vetor é: "+nmenor+"; na posição: "+pos_menor);
+		Console.WriteLine( "O maior elemento do vetor é: "+nmaior+"; na posição: "+pos_maior);
+	}
+}
+
+

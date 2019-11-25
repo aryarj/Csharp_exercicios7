@@ -1,0 +1,49 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Clear();
+		Random rn = new Random();
+		int A = rn.Next();
+		int i=0;
+		int n=0;
+		int aux=0;
+
+		Console.WriteLine("Porfavor, digite o número de componentes do vetor");
+		n = Convert.ToInt32(Console.ReadLine());
+		int[] v = new int[n];
+
+			while(i<n)
+            {
+				A = rn.Next(50);
+				v[i]=A;
+				Console.WriteLine("v["+i+"] = "+v[i]);
+				i++;
+			}
+			i=0;
+			while(i<(n-1))
+			{
+				for( int count = 0; count < (n-1); count++)
+				{
+					if(v[count]>v[count+1])
+					{
+						aux=v[count+1];
+						v[count+1]=v[count];
+						v[count]=aux;
+					}
+				}
+				i++;
+			}
+				
+			Console.WriteLine("o vetor rearranjado em ordem crescente é");
+			
+			for( int count = 0; count < n; count++)
+			{
+				Console.WriteLine("v["+count+"] = "+v[count]);
+			}
+			
+		
+	}
+}

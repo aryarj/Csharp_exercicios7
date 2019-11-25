@@ -1,0 +1,30 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		
+		int[] n = new int[20];
+		Random randNum = new Random();
+		int i = randNum.Next();
+		int j=0;
+		int z=0;
+		int S=0;
+		
+		for (j = 0; j <20; j++)
+            {
+				i = randNum.Next(0,50);
+				n[j]=i;
+				Console.WriteLine("n["+j+"] = "+n[j]);
+			}
+		for(z=0; z<=10 ; z++)
+			{
+			S=S+(n[z]-n[19-z]);
+			Console.WriteLine("n["+z+"] é: "+n[z]+" e n[19-"+z+"] é: "+n[19-z]);
+			Console.WriteLine("a unidade S vale:  "+(n[z]-n[19-z]));
+			
+			}
+		Console.WriteLine("A soma da série será: "+S);
+	}
+}

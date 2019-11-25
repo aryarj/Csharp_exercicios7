@@ -1,0 +1,44 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+/*Declaração de vetor */
+
+double[] v=new double[10]{1,1,1,1,1,1,1,1,1,1};//valor das mercadorias
+int[] q=new int[10]{100,100,100,100,100,100,100,100,100,100};//estoque
+double[] fat=new double[10];//faturamento
+double[] pc=new double[10]{0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5};//preçco de compra
+int qu=0;
+int i = 0;
+double soma=0;
+
+		Console.Clear();
+		while(i < 10)
+		{
+			Console.WriteLine("Digite a quantidade vendida do produto "+(i+1));
+			qu=Convert.ToInt32(Console.ReadLine());
+			q[i]=q[i]-qu; // atualiza estoque
+			
+			fat[i]=qu*(v[i]-pc[i]);//faturamento por produto
+			Console.WriteLine("O faturamento do produto "+(i+1)+" foi de R$ "+fat[i]);
+			
+			Console.WriteLine("Estoque atualizado do produto "+(i+1));
+			Console.WriteLine(q[i]);
+			i++;
+		}
+		Console.WriteLine("o faturamento total do dia foi:");
+		for(int j=0;j<10;j++)
+		{
+			soma=fat[j]+soma;
+		}
+		Console.WriteLine("R$ "+soma);
+		
+		
+	}
+}
+
+
+
+
